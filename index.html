@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎁 Claim Your Free $750 Gift Card!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --secondary: #FF6584;
+            --accent: #20BDFF;
+            --dark: #2D3748;
+            --light: #F7FAFC;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: var(--dark);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            width: 100%;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
+            margin-bottom: 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 10px;
+            position: relative;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            opacity: 0.9;
+            margin-bottom: 0;
+            font-weight: 400;
+            position: relative;
+        }
+        
+        .gift-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .card img {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 5px rgba(0,0,0,0.1));
+        }
+        
+        .card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .card p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+        
+        .card .amount {
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin: 5px 0;
+        }
+        
+        .claim-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8f9fd 100%);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .form-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+        
+        .form-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 0.95rem;
+        }
+        
+        input[type="email"],
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: #f8fafc;
+        }
+        
+        input[type="email"]:focus,
+        input[type="text"]:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+            outline: none;
+            background: white;
+        }
+        
+        button {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 18px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
+            margin-top: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.6);
+        }
+        
+        button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+            transform: rotate(30deg);
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+        
+        button:hover::after {
+            opacity: 1;
+            transform: rotate(30deg) translate(20%, 20%);
+        }
+        
+        .disclaimer {
+            font-size: 0.75rem;
+            color: #718096;
+            text-align: center;
+            margin-top: 30px;
+            line-height: 1.5;
+            padding: 0 10px;
+        }
+        
+        .countdown {
+            text-align: center;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            color: white;
+            margin: 20px 0;
+            font-weight: bold;
+            background: rgba(0,0,0,0.2);
+            padding: 12px;
+            border-radius: 50px;
+            display: inline-block;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .testimonials {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .testimonials h2::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        
+        .testimonial {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            position: relative;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .testimonial::before {
+            content: """;
+            font-family: serif;
+            font-size: 4rem;
+            color: rgba(108, 99, 255, 0.1);
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            line-height: 1;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author::before {
+            content: "—";
+            margin-right: 5px;
+        }
+        
+        /* Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 25px 15px;
+            }
+            
+            .gift-cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .card {
+                padding: 20px 10px;
+            }
+            
+            .card img {
+                width: 90px;
+                height: 60px;
+            }
+            
+            .claim-form {
+                padding: 20px;
+            }
+            
+            input[type="email"],
+            input[type="text"] {
+                padding: 12px;
+            }
+            
+            button {
+                padding: 16px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gift-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .card img {
+                width: 100px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎁 NEW REWARDS UNLOCKED!</h1>
+            <p class="subtitle">Claim your FREE $750 gift card today!</p>
+            <div class="countdown">
+                ⏰ Offer expires in: <span id="timer">05:00</span>
+            </div>
+        </header>
+        
+        <div class="gift-cards">
+            <div class="card floating" style="animation-delay: 0s;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+                <div class="amount">$750</div>
+                <h3>PayPal Gift Card</h3>
+                <p>Use anywhere online or transfer to your bank</p>
+            </div>
+            
+            <div class="card floating" style="animation-delay: 0.2s;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Amazon_icon.svg" alt="Amazon">
+                <div class="amount">$750</div>
+                <h3>Amazon Gift Card</h3>
+                <p>Millions of products to choose from</p>
+            </div>
+            
+            <div class="card floating" style="animation-delay: 0.4s;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Walmart_Spark.svg" alt="Walmart">
+                <div class="amount">$750</div>
+                <h3>Walmart Gift Card</h3>
+                <p>Shop at any Walmart store or online</p>
+            </div>
+            
+            <div class="card floating" style="animation-delay: 0.6s;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sephora_Logo.svg" alt="Sephora">
+                <div class="amount">$750</div>
+                <h3>Sephora Gift Card</h3>
+                <p>Premium beauty and cosmetics</p>
+            </div>
+            
+            <div class="card floating" style="animation-delay: 0.8s;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Zara_Logo.svg" alt="Zara">
+                <div class="amount">$750</div>
+                <h3>Zara Gift Card</h3>
+                <p>Trendy fashion for men and women</p>
+            </div>
+            
+            <div class="card floating" style="animation-delay: 1s;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
+                <div class="amount">$750</div>
+                <h3>Visa Gift Card</h3>
+                <p>Spend it however you want</p>
+            </div>
+        </div>
+        
+        <div class="claim-form">
+            <h2 class="form-title">Enter Your Details To Claim Your Gift Card</h2>
+            <form id="giftcard-form">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                </div>
+                
+                <div class="form-group">
+                    <label for="zip">ZIP Code:</label>
+                    <input type="text" id="zip" name="zip" required placeholder="Enter your ZIP code">
+                </div>
+                
+                <button type="submit">👉 CLAIM YOUR $750 GIFT CARD NOW 👈</button>
+            </form>
+        </div>
+        
+        <div class="testimonials">
+            <h2>Real People, Real Rewards</h2>
+            
+            <div class="testimonial">
+                <p>"I was skeptical at first, but I received my $750 Amazon gift card in less than a day! This is completely legit!"</p>
+                <div class="testimonial-author">Sarah J., Texas</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"The process was so simple - just my email and ZIP code. I used my PayPal gift card to pay off some debt. Life saver!"</p>
+                <div class="testimonial-author">Michael T., Florida</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"I've claimed 3 different gift cards from this offer already. They keep sending me new ones every month!"</p>
+                <div class="testimonial-author">Jessica L., California</div>
+            </div>
+        </div>
+        
+        <p class="disclaimer">
+            * Offer not sponsored or endorsed by any brands mentioned. Limited time offer while supplies last. 
+            Must be 18+ and resident of the United States. One gift card per household. 
+            By submitting your information you agree to our terms and conditions and privacy policy.
+            This is an advertisement. Results not typical.
+        </p>
+    </div>
+    
+    <script>
+        // Countdown timer
+        function startTimer(duration, display) {
+            var timer = duration, minutes, seconds;
+            var interval = setInterval(function () {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    clearInterval(interval);
+                    display.textContent = "OFFER EXPIRED!";
+                    display.style.color = "#FF6584";
+                }
+            }, 1000);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var fiveMinutes = 60 * 5,
+                display = document.querySelector('#timer');
+            startTimer(fiveMinutes, display);
+            
+            // Form submission handler
+            document.getElementById('giftcard-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Here you would normally send the data to a server
+                // For this static version, we'll just redirect to a random offer
+                const offers = [
+                    "https://smrturl.co/a/s93403cf07a/663?s1=",
+                    "https://smrturl.co/a/s93403cf07a/1511?s1=",
+                    "https://smrturl.co/a/s93403cf07a/86?s1=",
+                    "https://smrturl.co/a/s93403cf07a/91?s1="
+                ];
+                
+                const randomOffer = offers[Math.floor(Math.random() * offers.length)];
+                window.location.href = randomOffer;
+            });
+        });
+        
+        // Redirect users who come from affiliate links
+        if(window.location.search.includes('s1=')) {
+            window.location.href = window.location.pathname;
+        }
+    </script>
+</body>
+  </html>
