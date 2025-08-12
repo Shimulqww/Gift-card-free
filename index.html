@@ -91,6 +91,7 @@
             flex-direction: column;
             align-items: center;
             border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
         }
         
         .card:hover {
@@ -123,6 +124,27 @@
             color: var(--primary);
             font-size: 1.3rem;
             margin: 5px 0;
+        }
+        
+        .claim-now-btn {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 80%;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .claim-now-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108, 99, 255, 0.4);
         }
         
         .claim-form {
@@ -208,24 +230,6 @@
         button:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(108, 99, 255, 0.6);
-        }
-        
-        button::after {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
-            transform: rotate(30deg);
-            transition: all 0.5s ease;
-            opacity: 0;
-        }
-        
-        button:hover::after {
-            opacity: 1;
-            transform: rotate(30deg) translate(20%, 20%);
         }
         
         .disclaimer {
@@ -367,6 +371,11 @@
             button {
                 padding: 16px;
             }
+            
+            .claim-now-btn {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -397,6 +406,7 @@
                 <div class="amount">$750</div>
                 <h3>PayPal Gift Card</h3>
                 <p>Use anywhere online or transfer to your bank</p>
+                <a href="https://smrturl.co/a/s93403cf07a/663?s1=" class="claim-now-btn" target="_blank">CLAIM NOW</a>
             </div>
             
             <div class="card floating" style="animation-delay: 0.2s;">
@@ -404,6 +414,7 @@
                 <div class="amount">$750</div>
                 <h3>Amazon Gift Card</h3>
                 <p>Millions of products to choose from</p>
+                <a href="https://smrturl.co/a/s93403cf07a/1511?s1=" class="claim-now-btn" target="_blank">CLAIM NOW</a>
             </div>
             
             <div class="card floating" style="animation-delay: 0.4s;">
@@ -411,6 +422,7 @@
                 <div class="amount">$750</div>
                 <h3>Walmart Gift Card</h3>
                 <p>Shop at any Walmart store or online</p>
+                <a href="https://smrturl.co/a/s93403cf07a/86?s1=" class="claim-now-btn" target="_blank">CLAIM NOW</a>
             </div>
             
             <div class="card floating" style="animation-delay: 0.6s;">
@@ -418,20 +430,7 @@
                 <div class="amount">$750</div>
                 <h3>Sephora Gift Card</h3>
                 <p>Premium beauty and cosmetics</p>
-            </div>
-            
-            <div class="card floating" style="animation-delay: 0.8s;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Zara_Logo.svg" alt="Zara">
-                <div class="amount">$750</div>
-                <h3>Zara Gift Card</h3>
-                <p>Trendy fashion for men and women</p>
-            </div>
-            
-            <div class="card floating" style="animation-delay: 1s;">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa">
-                <div class="amount">$750</div>
-                <h3>Visa Gift Card</h3>
-                <p>Spend it however you want</p>
+                <a href="https://smrturl.co/a/s93403cf07a/91?s1=" class="claim-now-btn" target="_blank">CLAIM NOW</a>
             </div>
         </div>
         
@@ -529,4 +528,4 @@
         }
     </script>
 </body>
-  </html>
+</html>
